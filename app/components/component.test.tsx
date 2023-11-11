@@ -3,6 +3,7 @@
  */
 import { fireEvent, render, screen } from '@testing-library/react'
 import Component from './component'
+import '@testing-library/jest-dom'
 
 it('App Router: Works with Client Components (React State)', () => {
   render(<Component />)
