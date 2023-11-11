@@ -1,11 +1,10 @@
 'use client'
 
-import Counter from "./components/component"
-import styles from './page.module.css'
+import Homepage from "./components/Homepage/homepage"
+import '@/styles/global.css'
 
 export default function ClientComponent() {
-  return <div>
-    <h1 className={styles.hello}>Hello</h1>
-    <Counter/>
-  </div>
+  return <>
+    <Homepage/>
+  </>
 }
