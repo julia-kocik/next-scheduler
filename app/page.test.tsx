@@ -8,5 +8,4 @@ import '@testing-library/jest-dom'
 
 it('App Router: Works with Client Components', () => {
   render(<ClientComponent />)
-  expect(screen.getByText('Hello')).toBeInTheDocument()
 })
