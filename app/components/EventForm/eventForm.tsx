@@ -79,7 +79,7 @@ export default function EventForm({ setForceFetchAfterPost, toastInfo, setToastI
   return (
     <div className={styles.container}>
       {message && <Toast message={message} color={color}/>}
-      <form className={styles.container} onSubmit={onSubmit}>
+      <form onSubmit={onSubmit}>
         {fieldsArray.map((el, index) => {
           const [key, value] = el;
           return (

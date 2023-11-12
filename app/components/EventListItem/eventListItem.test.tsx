@@ -4,6 +4,7 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import EventListItem from './eventListItem'
 import '@testing-library/jest-dom'
+import { Dispatch, SetStateAction } from 'react'
 
 const eventListItem = {
   id: '123',
@@ -14,5 +15,7 @@ const eventListItem = {
 }
 
 it('App Router: Works with Client Components (React State)', () => {
-  render(<EventListItem {...eventListItem} />)
+  const setForceFetchAfterDelete: Dispatch<SetStateAction<boolean>> = jest.fn();
+  const setToastInfo: Dispatch<SetStateAction<object>> = jest.fn();
+  render(<EventListItem setToastInfo={setToastInfo} setForceFetchAfterDelete={setForceFetchAfterDelete} {...eventListItem} />)
 })

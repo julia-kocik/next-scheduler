@@ -6,16 +6,17 @@ import { EventsData } from '../Homepage/homepage';
 interface EventListProps {
   eventsData: EventsData[];
   setToastInfo: Dispatch<SetStateAction<{message: string, color: string}>>
+  setForceFetchAfterDelete: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function EventList({ eventsData, setToastInfo }: EventListProps) {
+export default function EventList({ eventsData, setToastInfo, setForceFetchAfterDelete }: EventListProps) {
   return (
     <div className={styles.container}>
       {eventsData.length === 0 ? (
           <p className={styles.noEventsMsg}>No events saved yet</p>
         ) :
         (eventsData.map(el => (
-          <EventListItem key={el.id} {...el} setToastInfo={setToastInfo} />
+          <EventListItem key={el.id} {...el} setToastInfo={setToastInfo} setForceFetchAfterDelete={setForceFetchAfterDelete} />
         )
       ))}
     </div>

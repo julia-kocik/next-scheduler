@@ -11,9 +11,10 @@ interface EventListItemProps {
   email: string;
   date: Date;
   setToastInfo: Dispatch<SetStateAction<{message: string, color: string}>>
+  setForceFetchAfterDelete: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function EventListItem({id, name, surname, email, date, setToastInfo}: EventListItemProps) {
+export default function EventListItem({id, name, surname, email, date, setToastInfo, setForceFetchAfterDelete }: EventListItemProps) {
   const [isDeleting, setIsDeleting] = useState<boolean>(false);
 
   const onDeleteHandler = async (): Promise<void> => {
@@ -25,7 +26,7 @@ export default function EventListItem({id, name, surname, email, date, setToastI
       setIsDeleting(true);
       await axios.delete(`http://scheduler-env.eba-di2rddya.eu-north-1.elasticbeanstalk.com/api/v1/event/${id}`);
       showToast('Event successfully deleted!', 'green', setToastInfo);
-      // setForceFetchAfterPost(true)
+      setForceFetchAfterDelete(true)
     } catch (error: unknown) {
       showToast('Error occurred when data deleting, please try again later.', 'red', setToastInfo);
     } finally {
