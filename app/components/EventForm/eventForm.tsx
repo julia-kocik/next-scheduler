@@ -14,12 +14,12 @@ interface FormFields {
 }
 
 interface EventFormInterface {
-  setForceFetch: Dispatch<SetStateAction<boolean>>;
+  setForceFetchAfterPost: Dispatch<SetStateAction<boolean>>;
   toastInfo: {message: string, color: string}
   setToastInfo: Dispatch<SetStateAction<{message: string, color: string}>>
 }
 
-export default function EventForm({ setForceFetch, toastInfo, setToastInfo }: EventFormInterface) {
+export default function EventForm({ setForceFetchAfterPost, toastInfo, setToastInfo }: EventFormInterface) {
   const [formFields, setFormFields] = useState<FormFields>({
     name: '',
     surname: '',
@@ -62,11 +62,11 @@ export default function EventForm({ setForceFetch, toastInfo, setToastInfo }: Ev
         ...formFields
       })
       showToast('Event successfully created!', 'green', setToastInfo)
+      setForceFetchAfterPost(true)
     } catch (error: unknown) {
       showToast('Error occured when data submitting, please try again later.', 'red', setToastInfo)
     } finally {
       setIsSubmitting(false)
-      setForceFetch(true)
     }
     setFormFields({
       name: '',

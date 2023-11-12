@@ -5,11 +5,12 @@ import styles from './Button.module.scss';
 interface ButtonProps {
   title: string;
   color: string;
+  onClickHandler: () => void
 }
 
-export default function Button({title, color}: ButtonProps) {
+export default function Button({title, color, onClickHandler}: ButtonProps) {
   return (
-    <button className={`${styles.container} ${styles[color]}`}>
+    <button  className={`${styles.container} ${styles[color]}`} onClick={onClickHandler}>
       {title}
     </button>
   );
