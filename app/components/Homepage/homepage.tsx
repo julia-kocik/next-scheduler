@@ -3,6 +3,8 @@ import EventForm from '../EventForm/eventForm'
 import EventList from '../EventList/eventList'
 import styles from './homepage.module.scss'
 import axios from 'axios';
+import Toast from '../Toast/Toast';
+import { showToast } from 'app/utils/showToast';
 
 export interface EventsData {
   id: string;
@@ -15,6 +17,8 @@ export interface EventsData {
 export default function Homepage() {
   const [eventsData, setEventsData] = useState<EventsData[]>([]);
   const [forceFetch, setForceFetch] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(true)
+  const [toastInfo, setToastInfo] = useState({message: '', color: 'red'})
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -23,8 +27,9 @@ export default function Homepage() {
           const data: EventsData[] = response.data; 
           setEventsData(data);
         }
+        setLoading(false)
       } catch (error) {
-        console.error('Error fetching data:', error);
+        showToast('Error occured when data fetching, please try again later.', 'red', setToastInfo)
       } finally {
         setForceFetch(false)
       }
@@ -35,7 +40,8 @@ export default function Homepage() {
   return (
     <div className={styles.container}>
       <div className={styles.subContainer}>
-        <EventForm setForceFetch={setForceFetch}/>
+        {loading && <Toast color='blue' message='Loading'/>}
+        <EventForm setForceFetch={setForceFetch} toastInfo={toastInfo} setToastInfo={setToastInfo}/>
         <EventList eventsData={eventsData}/>
       </div>
     </div>

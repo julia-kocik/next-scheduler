@@ -6,6 +6,7 @@ import EventListItem from './eventListItem'
 import '@testing-library/jest-dom'
 
 const eventListItem = {
+  id: '123',
   name: 'Julia',
   surname: 'Test',
   email: 'julia@test.com',

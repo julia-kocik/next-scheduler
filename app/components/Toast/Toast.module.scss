@@ -16,10 +16,14 @@
     padding: 0 1rem;
 }
 
-  .red {
+.red {
     background-color: $error-color; 
 }
 
-  .green { 
+.green { 
     background-color: $success-color;
+}
+
+.blue { 
+    background-color: $info-color;
 }
