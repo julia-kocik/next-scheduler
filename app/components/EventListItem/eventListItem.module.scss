@@ -1,4 +1,21 @@
+@import '../../../styles/settings.scss';
+
 .container {
-    border: 3px solid red;
+    margin: 1rem;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
     height: 25vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.dataContainer {
+    padding: 0 1rem;
+}
+
+.btnsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

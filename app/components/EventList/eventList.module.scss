@@ -1,7 +1,7 @@
 .container {
     border: 1px solid green;
-    overflow-y: scroll;
-    height: 100%;
+    overflow-y: auto;
+    max-height: 100%;
 }
 
 .noEventsMsg {
