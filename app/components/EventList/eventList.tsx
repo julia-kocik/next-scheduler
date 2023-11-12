@@ -10,8 +10,12 @@ interface EventListProps {
 export default function EventList({ eventsData }: EventListProps) {
   return (
     <div className={styles.container}>
-      {eventsData.map(el => (
-        <EventListItem key={el.id} {...el} />
+      {eventsData.length === 0 ? (
+          <p className={styles.noEventsMsg}>No events saved yet</p>
+        ) :
+        (eventsData.map(el => (
+          <EventListItem key={el.id} {...el} />
+        )
       ))}
     </div>
   );
