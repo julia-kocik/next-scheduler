@@ -2,9 +2,9 @@ import React, { ChangeEvent, Dispatch, FormEvent, SetStateAction, useState } fro
 import axios from 'axios';
 import styles from './eventForm.module.scss';
 import Toast from '../Toast/Toast';
-import { formatDateForInput } from 'app/utils/dataFormatter';
-import { showToast } from 'app/utils/showToast';
-import { emailRegex } from 'app/utils/emailRegex';
+import { formatDateForInput } from '../../utils/dataFormatter';
+import { showToast } from '../../utils/showToast';
+import { emailRegex } from '../../utils/emailRegex';
 
 interface FormFields {
   name: string;

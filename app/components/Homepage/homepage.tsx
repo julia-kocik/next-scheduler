@@ -4,7 +4,7 @@ import EventList from '../EventList/eventList'
 import styles from './homepage.module.scss'
 import axios from 'axios';
 import Toast from '../Toast/Toast';
-import { showToast } from 'app/utils/showToast';
+import { showToast } from '../../utils/showToast';
 
 export interface EventsData {
   id: string;

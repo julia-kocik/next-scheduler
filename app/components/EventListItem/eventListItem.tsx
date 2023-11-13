@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Button from '../Button/Button';
 import styles from './eventListItem.module.scss'
-import { showToast } from 'app/utils/showToast';
+import { showToast } from '../../utils/showToast';
 import { Dispatch, SetStateAction, useState } from 'react';
 
 interface EventListItemProps {
