@@ -16,6 +16,7 @@ const eventListItem = {
 
 it('App Router: Works with Client Components (React State)', () => {
   const setForceFetchAfterDelete: Dispatch<SetStateAction<boolean>> = jest.fn();
+  const setForceFetchAfterUpdate: Dispatch<SetStateAction<boolean>> = jest.fn();
   const setToastInfo: Dispatch<SetStateAction<object>> = jest.fn();
-  render(<EventListItem setToastInfo={setToastInfo} setForceFetchAfterDelete={setForceFetchAfterDelete} {...eventListItem} />)
+  render(<EventListItem setToastInfo={setToastInfo} setForceFetchAfterUpdate={setForceFetchAfterUpdate} setForceFetchAfterDelete={setForceFetchAfterDelete} {...eventListItem} />)
 })
