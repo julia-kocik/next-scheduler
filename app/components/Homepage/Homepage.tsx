@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import EventForm from '../EventForm/eventForm'
-import EventList from '../EventList/eventList'
-import styles from './homepage.module.scss'
+import EventForm from '../EventForm/EventForm'
+import EventList from '../EventList/EventList'
+import styles from './Homepage.module.scss'
 import axios from 'axios';
 import Toast from '../Toast/Toast';
 import { showToast } from '../../utils/showToast';

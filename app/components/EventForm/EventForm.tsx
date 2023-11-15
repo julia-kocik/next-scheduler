@@ -1,6 +1,6 @@
 import React, { ChangeEvent, Dispatch, FormEvent, SetStateAction, useState } from 'react';
 import axios from 'axios';
-import styles from './eventForm.module.scss';
+import styles from './EventForm.module.scss';
 import Toast from '../Toast/Toast';
 import { formatDateForInput } from '../../utils/dataFormatter';
 import { showToast } from '../../utils/showToast';

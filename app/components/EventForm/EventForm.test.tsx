@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 import { fireEvent, render, screen } from '@testing-library/react';
-import EventForm from './eventForm';
+import EventForm from './EventForm';
 import '@testing-library/jest-dom';
 import { Dispatch, SetStateAction } from 'react';
 

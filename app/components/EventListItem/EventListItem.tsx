@@ -1,6 +1,6 @@
 import axios, { AxiosError } from 'axios';
 import Button from '../Button/Button';
-import styles from './eventListItem.module.scss'
+import styles from './EventListItem.module.scss'
 import { showToast } from '../../utils/showToast';
 import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
 import { formatDateForInput } from '../../utils/dataFormatter';
@@ -115,6 +115,9 @@ export default function EventListItem({id, name, surname, email, date, setToastI
         })
     }
   }
+  const onCancelClickHandler = () => {
+    setShowUpdateOptions(false)
+  }
   return (
     <div className={styles.container}>
       {!showUpdateOptions ? 
@@ -130,8 +133,8 @@ export default function EventListItem({id, name, surname, email, date, setToastI
             {fieldsArray.map((el, index) => {
               const [key, value] = el;
               return (
-                <div key={index}>
-                  <label htmlFor={key}>{key.slice(3)}: </label>
+                <div className={styles.dataSubContainer} key={index}>
+                  <label htmlFor={key}><strong>{key.slice(3)}:</strong> </label>
                   <input type={key !== 'newDate' ? 'text' : 'date'} value={value} id={key} name={key} onChange={onChange} />
                 </div>
             )})}
@@ -139,7 +142,8 @@ export default function EventListItem({id, name, surname, email, date, setToastI
         )
       }
     <div className={styles.btnsContainer}>
-      <Button onClickHandler={onDeleteHandler} title='Remove' color='red'/>
+      <span className={styles.cancel} onClick={onDeleteHandler}>X</span>
+      <Button onClickHandler={onCancelClickHandler} title='Cancel' color='red'/>
       {showUpdateOptions ? <Button onClickHandler={onUpdateHandler} title='Save' color='blue'/> : <Button onClickHandler={onEnableUpdateHandler} title='Update' color='blue'/>}
     </div>
   </div>

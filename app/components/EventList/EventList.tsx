@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import styles from './eventList.module.scss';
-import EventListItem from '../EventListItem/eventListItem';
-import { EventsData } from '../Homepage/homepage';
+import styles from './EventList.module.scss';
+import EventListItem from '../EventListItem/EventListItem';
+import { EventsData } from '../Homepage/Homepage';
 
 interface EventListProps {
   eventsData: EventsData[];
