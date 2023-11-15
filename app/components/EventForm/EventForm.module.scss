@@ -1,5 +1,30 @@
 @import '../../../styles/settings.scss';
 
 .container {
-    border-right: 2px solid $light-gray;
+    border-right: 3px solid $light-gray;
+    display: grid;
+    place-items: center;
+    .form {
+        display: grid;
+        width: 400px;
+        .formItem {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            margin: 1rem 0;
+            label {
+                font-weight: bold;
+            }
+            input {
+                margin: 0;
+                padding: 0;
+                border-radius: 0.25rem;
+                border: 2px solid $color-black;
+                height: 2rem;
+            }
+        }
+        button {
+            width: 50%;
+            justify-self: center;
+        }
+    }
 }

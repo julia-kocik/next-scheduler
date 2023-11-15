@@ -5,6 +5,7 @@ import Toast from '../Toast/Toast';
 import { formatDateForInput } from '../../utils/dataFormatter';
 import { showToast } from '../../utils/showToast';
 import { emailRegex } from '../../utils/emailRegex';
+import Button from '../Button/Button';
 
 interface FormFields {
   name: string;
@@ -79,16 +80,16 @@ export default function EventForm({ setForceFetchAfterPost, toastInfo, setToastI
   return (
     <div className={styles.container}>
       {message && <Toast message={message} color={color}/>}
-      <form onSubmit={onSubmit}>
+      <form className={styles.form} onSubmit={onSubmit}>
         {fieldsArray.map((el, index) => {
           const [key, value] = el;
           return (
-            <div key={index}>
+            <div className={styles.formItem} key={index}>
               <label htmlFor={key}>{key[0].toUpperCase() + key.slice(1)}: </label>
               <input type={key !== 'date' ? 'text' : 'date'} value={value} id={key} name={key} onChange={onChange} />
             </div>
         )})}
-        <button type="submit">Submit</button>
+        <Button title='Submit' color='blue'/>
       </form>
     </div>
   );

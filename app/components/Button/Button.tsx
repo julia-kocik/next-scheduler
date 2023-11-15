@@ -5,7 +5,7 @@ import styles from './Button.module.scss';
 interface ButtonProps {
   title: string;
   color: string;
-  onClickHandler: () => void
+  onClickHandler?: () => Promise<void>
 }
 
 export default function Button({title, color, onClickHandler}: ButtonProps) {
