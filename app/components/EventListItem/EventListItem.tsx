@@ -54,10 +54,7 @@ export default function EventListItem({id, name, surname, email, date, setToastI
   
     try {
       setIsDeleting(true);
-      await axios.delete(`http://scheduler-env.eba-di2rddya.eu-north-1.elasticbeanstalk.com/api/v1/event/${id}`, {
-        headers: {
-          referrerPolicy: "unsafe-url"
-        }});
+      await axios.delete(`http://scheduler-env.eba-di2rddya.eu-north-1.elasticbeanstalk.com/api/v1/event/${id}`);
       showToast('Event successfully deleted!', 'green', setToastInfo);
       setForceFetchAfterDelete(true)
     } catch (error: unknown) {
@@ -92,10 +89,7 @@ export default function EventListItem({id, name, surname, email, date, setToastI
             }
           })
           url+=queryParams.join('&')
-          await axios.patch(url, {
-            headers: {
-              referrerPolicy: "unsafe-url"
-            }});
+          await axios.patch(url)
           showToast('Event successfully updated!', 'green', setToastInfo)
           setForceFetchAfterUpdate(true)
           setShowUpdateOptions(false)

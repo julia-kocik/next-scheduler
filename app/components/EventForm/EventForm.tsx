@@ -61,10 +61,7 @@ export default function EventForm({ setForceFetchAfterPost, toastInfo, setToastI
       setIsSubmitting(true)
       await axios.post('http://scheduler-env.eba-di2rddya.eu-north-1.elasticbeanstalk.com/api/v1/event', {
         ...formFields
-      }, {
-        headers: {
-          referrerPolicy: "unsafe-url"
-        }});
+      })
       showToast('Event successfully created!', 'green', setToastInfo)
       setForceFetchAfterPost(true)
     } catch (error: unknown) {
