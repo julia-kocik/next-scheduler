@@ -25,7 +25,10 @@ export default function Homepage() {
     const fetchData = async () => {
       try {
         if(forceFetchAfterPost || forceFetchAfterDelete || forceFetchAfterUpdate) {
-          const response = await axios.get<EventsData[]>('http://scheduler-env.eba-di2rddya.eu-north-1.elasticbeanstalk.com/api/v1/event');
+          const response = await axios.get<EventsData[]>('http://scheduler-env.eba-di2rddya.eu-north-1.elasticbeanstalk.com/api/v1/event', {
+            headers: {
+              referrerPolicy: "unsafe-url"
+            }});
           const data: EventsData[] = response.data; 
           setEventsData(data);
         }
