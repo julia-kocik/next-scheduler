@@ -2,7 +2,7 @@
 
 .container {
     color: $light-white;
-    width: 100px;
+    min-width: 100px;
     outline: none;
     border: none;
     border-radius: 0.5rem;
@@ -12,6 +12,11 @@
     cursor: pointer;
     margin: 0.5rem 0;
     box-shadow: $box-shadow;
+    @media (max-width: $tablet-breakpoint) {
+        font-size: 1.5rem;
+        height: 4rem;
+        min-width: 150px;
+    }
 }
 
 .red {

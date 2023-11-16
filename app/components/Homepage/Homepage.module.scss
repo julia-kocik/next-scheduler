@@ -15,4 +15,8 @@
     background-color: $light-white;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    @media (max-width: $tablet-breakpoint) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
 }
