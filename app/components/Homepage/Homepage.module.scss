@@ -4,10 +4,13 @@
     height: 100vh;
     display: grid;
     place-items: center;
+    @media (max-width: $tablet-breakpoint) {
+        height: auto;
+    }
 }
 
 .subContainer {
-    height: 86vh;
+    height: 86%;
     margin-top: 2rem;
     width: 80%;
     border-radius: 1rem;

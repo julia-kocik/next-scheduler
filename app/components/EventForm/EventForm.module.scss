@@ -14,6 +14,9 @@
             width: 720px; 
             margin-top: 8rem;  
         }
+        @media (max-width: $mobile-breakpoint) {
+            width: 520px; 
+        }
         .formItem {
             display: grid;
             grid-template-rows: 1fr 1fr;
